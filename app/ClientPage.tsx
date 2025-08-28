@@ -747,25 +747,25 @@ export default function Home() {
               View My Work
             </EnhancedButton>
 
-            <EnhancedButton
-              size="lg"
-              variant="outline"
-              icon={<Download className="w-5 h-5" />}
-              onClick={() => {
-                const link = document.createElement("a")
-                link.href = "/ahmed-moner-cv.pdf"
-                link.download = "Ahmed_Moner_CV.pdf"
-                document.body.appendChild(link)
-                link.click()
-                document.body.removeChild(link)
-                toast({
-                  title: "CV Download",
-                  description: "Ahmed Moner's CV is being downloaded.",
-                })
-              }}
-            >
-              Download CV
-            </EnhancedButton>
+           <EnhancedButton
+  size="lg"
+  variant="outline"
+  icon={<Download className="w-5 h-5" />}
+  onClick={() => {
+    const link = document.createElement("a")
+    link.href = "/AHMEDMONER%20CV.pdf"  // ← Changed this (note %20 for space)
+    link.download = "Ahmed_Moner_CV.pdf"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    toast({
+      title: "CV Download",
+      description: "Ahmed Moner's CV is being downloaded.",
+    })
+  }}
+>
+  Download CV
+</EnhancedButton>
           </div>
         </motion.div>
 
