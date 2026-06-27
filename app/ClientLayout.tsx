@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import type React from "react"
-import { ThemeProvider } from "@/components/theme-provider"
 import LoadingScreen from "@/components/loading-screen"
 
 export default function ClientLayout({
@@ -22,9 +21,5 @@ export default function ClientLayout({
     return () => clearTimeout(timer)
   }, [])
 
-  return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-      {isLoading ? <LoadingScreen /> : children}
-    </ThemeProvider>
-  )
+  return <>{isLoading ? <LoadingScreen /> : children}</>
 }
